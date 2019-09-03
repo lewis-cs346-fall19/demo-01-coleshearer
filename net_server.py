@@ -7,12 +7,9 @@ sock.listen(5)
 for i in range(5):
     (connectedSock, clientAddress) = sock.accept()
     print(clientAddress)
-try:
-    msg = sock.recv(1024).decode()
-except:
-    sock.close()
     
-sock.sendall(message.encode())
+    msg = connectedSock.recv(1024).decode()
+    connectedSock.sendall(msg.encode())
 
 
 

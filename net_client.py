@@ -4,5 +4,6 @@ addr = ("localhost",54421)
 sock.connect(addr)
 for i in range(5):
     msg = input()
-    sock.sendall()
-    print(sock.recv())
+    sock.sendall(msg.encode())
+    #print(sock.recv(1024).decode())
+    print("received")
